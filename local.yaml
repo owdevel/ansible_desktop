@@ -1,0 +1,23 @@
+# Tasks to complete before running anything else
+- hosts: all
+  tags: always
+  become: true
+  pre_tasks:
+    - name: pre-run | update package cache (arch)
+      tags: always
+      pacman: update_cache=yes
+      changed_when: False
+      when: ansible_distribution in ["Archlinux", "Manjaro"]
+
+    - name: pre-run | update package cache (debian)
+      tags: always
+      apt: update_cache=yes
+      changed_when: False
+      when: ansible_distribution in ["Debian", "Ubuntu"]
+
+# Individual Roles
+- hosts: all
+  tags: base
+  become: true
+  roles:
+    - base
