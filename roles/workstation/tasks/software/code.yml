@@ -1,3 +1,4 @@
 - name: install code
+  package:
     name:
       - code
