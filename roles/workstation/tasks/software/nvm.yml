@@ -2,3 +2,13 @@
   package:
     name:
       - nvm
+
+- name: add node version manager to bashrc
+  lineinfile:
+    path: ~/.bashrc
+    line: source /usr/share/nvm/init-nvm.sh
+
+- name: add node version manager to zshrc
+  lineinfile:
+    path: ~/.zshrc
+    line: source /usr/share/nvm/init-nvm.sh
