@@ -1,6 +1,7 @@
 - name: install system utils
   package:
     name:
+      - base-devel
       - curl
       - htop
       - neofetch
