@@ -8,4 +8,5 @@
       - ranger
       - rsync
       - tmux
+      - unzip
       - zsh
