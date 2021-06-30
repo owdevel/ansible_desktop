@@ -1,0 +1,4 @@
+- name: install google-chrome
+  package:
+    name:
+      - google-chrome

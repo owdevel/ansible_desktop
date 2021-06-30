@@ -1,4 +1,11 @@
-- name: install htop
+- name: install system utils
   package:
     name:
+      - curl
       - htop
+      - neofetch
+      - neovim
+      - ranger
+      - rsync
+      - tmux
+      - zsh
