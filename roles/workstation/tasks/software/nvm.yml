@@ -5,10 +5,10 @@
 
 - name: add node version manager to bashrc
   lineinfile:
-    path: ~/.bashrc
+    path: /home/owen/.bashrc
     line: source /usr/share/nvm/init-nvm.sh
 
 - name: add node version manager to zshrc
   lineinfile:
-    path: ~/.zshrc
+    path: /home/owen/.zshrc
     line: source /usr/share/nvm/init-nvm.sh
