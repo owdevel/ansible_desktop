@@ -1,6 +1,23 @@
-- name: install python3 and related modules
-  package:
-    name:
-      - "{{ python_package }}"
-      - "{{ python_pip_package }}"
-      - "{{ python_virtualenv_package }}"
+- name: python3
+  tags:
+    - python
+    - pip
+  block:
+    - name: install python3 and modules
+      package:
+        name:
+          - "{{ python_package }}"
+          - "{{ python_pip_package }}"
+          - "{{ python_virtualenv_package }}"
+
+    - name: install pip packages
+      become_user: owen
+      pip:
+        executable: /usr/bin/pip3
+        state: latest
+        name:
+          - pipx
+
+
+
+
