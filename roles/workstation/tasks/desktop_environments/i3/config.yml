@@ -5,6 +5,8 @@
     - name: i3 | create config directory
       file:
         path: /home/{{ user_name}}/.i3
+        owner: "{{user_name}}"
+        group: "{{user_name}}"
         state: directory
 
     - name: i3 | copy config
