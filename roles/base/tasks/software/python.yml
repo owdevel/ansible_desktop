@@ -1,6 +1,6 @@
-- name: install python3
+- name: install python3 and related modules
   package:
     name:
-      - python
-      - python-pip
-    when: ansible_distribution == "Manjaro"
+      - "{{ python_package }}"
+      - "{{ python_pip_package }}"
+      - "{{ python_virtualenv_package }}"
