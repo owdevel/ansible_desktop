@@ -1,0 +1,21 @@
+- name: terminal
+  tags:
+    - terminal
+    - zsh
+    - bash
+  block:
+    - name: terminal | install main termial applications
+      package:
+        name:
+          - tmux
+          - zsh
+
+    - name: terminal | add aliases to bashrc
+      blockinfile:
+        path: /home/owen/.bashrc
+        block: "{{ terminal_aliases }}"
+
+    - name: terminal | add aliases to zshrc
+      blockinfile:
+        path: /home/owen/.zshrc
+        block: "{{ terminal_aliases }}"

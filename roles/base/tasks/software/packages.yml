@@ -3,11 +3,10 @@
     name:
       - base-devel
       - curl
+      - git
       - htop
       - neofetch
       - neovim
       - ranger
       - rsync
-      - tmux
       - unzip
-      - zsh
