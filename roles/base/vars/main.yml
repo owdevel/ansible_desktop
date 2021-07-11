@@ -1,1 +1,3 @@
-terminal_aliases: "alias ll='ls -al'\nalias g='git'"
+terminal_aliases: |
+  alias ll='ls -al'
+  alias g='git'
