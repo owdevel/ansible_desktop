@@ -12,7 +12,7 @@
       file:
         path: /var/log/ansible.log
         owner: root
-        group: ansible
+        group: root
         mode: 0664
         state: touch
       changed_when: False
