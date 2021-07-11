@@ -1,14 +1,19 @@
-- name: install node version manager
-  package:
-    name:
-      - nvm
-
-- name: add node version manager to bashrc
-  lineinfile:
-    path: /home/owen/.bashrc
-    line: source /usr/share/nvm/init-nvm.sh
-
-- name: add node version manager to zshrc
-  lineinfile:
-    path: /home/owen/.zshrc
-    line: source /usr/share/nvm/init-nvm.sh
+- name: node version manager
+  tags:
+    - node
+    - nvm
+  block:
+    - name: nvm | install node version manager
+      package:
+        name:
+          - nvm
+    
+    - name: nvm | add to bashrc
+      lineinfile:
+        path: /home/owen/.bashrc
+        line: source /usr/share/nvm/init-nvm.sh
+    
+    - name: nvm | add to zshrc
+      lineinfile:
+        path: /home/owen/.zshrc
+        line: source /usr/share/nvm/init-nvm.sh

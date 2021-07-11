@@ -1,4 +1,6 @@
 - name: install code
+  tags:
+    - code
   package:
     name:
       - code

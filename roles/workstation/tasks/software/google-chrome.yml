@@ -1,4 +1,7 @@
 - name: install google-chrome
+  tags:
+    - browser
+    - chrome
   package:
     name:
       - google-chrome
