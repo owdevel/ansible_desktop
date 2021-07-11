@@ -21,3 +21,8 @@
         path: /home/owen/.zshrc
         marker: "# {mark} ANSIBLE MANAGED BLOCK - terminal"
         block: "{{ terminal_aliases }}"
+
+    - name: terminal | set zsh as default user shell
+      user:
+        name: "{{user_name}}"
+        shell: /usr/bin/zsh
