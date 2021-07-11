@@ -13,9 +13,11 @@
     - name: terminal | add aliases to bashrc
       blockinfile:
         path: /home/owen/.bashrc
+        marker: "# {mark} ANSIBLE MANAGED BLOCK - terminal"
         block: "{{ terminal_aliases }}"
 
     - name: terminal | add aliases to zshrc
       blockinfile:
         path: /home/owen/.zshrc
+        marker: "# {mark} ANSIBLE MANAGED BLOCK - terminal"
         block: "{{ terminal_aliases }}"

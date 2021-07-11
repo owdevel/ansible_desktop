@@ -22,9 +22,11 @@
       lineinfile:
         path: /home/owen/.bashrc
         line: eval "$(register-python-argcomplete pipx)"
+
     - name: python3 | pipx zsh
       blockinfile:
         path: /home/owen/.zshrc
+        marker: "# {mark} ANSIBLE MANAGED BLOCK - pipx"
         block: |
           autoload -U bashcompinit
           bashcompinit
