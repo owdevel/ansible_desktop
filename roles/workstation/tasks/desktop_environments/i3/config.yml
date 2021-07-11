@@ -2,8 +2,8 @@
   tags:
     - i3
   copy:
-    src: /files/i3/config
-    dest: "/home/{{ user_name }}/.i3/config"
+    src: i3/config
+    dest: /home/{{ user_name }}/.i3/config
     owner: "{{user_name}}"
     group: "{{user_name}}"
     mode: '0644'
