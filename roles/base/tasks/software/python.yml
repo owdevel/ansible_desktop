@@ -24,7 +24,7 @@
         line: eval "$(register-python-argcomplete pipx)"
     - name: python3 | pipx zsh
       blockinfile:
-        path: /home/owen.zshrc
+        path: /home/owen/.zshrc
         block: |
           autoload -U bashcompinit
           bashcompinit
