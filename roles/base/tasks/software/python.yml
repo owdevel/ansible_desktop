@@ -3,14 +3,14 @@
     - python
     - pip
   block:
-    - name: install python3 and modules
+    - name: python3 | install python3 and modules
       package:
         name:
           - "{{ python_package }}"
           - "{{ python_pip_package }}"
           - "{{ python_virtualenv_package }}"
 
-    - name: install pip packages
+    - name: python3 | install pip packages
       become_user: owen
       pip:
         executable: /usr/bin/pip3
