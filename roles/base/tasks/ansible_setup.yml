@@ -1,0 +1,19 @@
+- name: ansible setup
+  tags:
+    - ansible
+    - ansible-setup
+  block:
+    - name: ansible setup | ensure ansible is latest
+      package:
+        name: ansible
+        state: latest
+    
+    - name: ansible setup | create log file
+      file:
+        path: /var/log/ansible.log
+        owner: root
+        group: ansible
+        mode: 0664
+        state: touch
+      changed_when: False
+

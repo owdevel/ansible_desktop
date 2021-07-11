@@ -3,5 +3,9 @@
   tags: always
 
 - block:
+
+  # Setup Ansible
+  - import_tasks: ansible_setup.yml
+
   - import_tasks: software/packages.yml
   - import_tasks: software/python.yml
