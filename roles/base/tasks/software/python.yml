@@ -1,0 +1,6 @@
+- name: install python3
+  package:
+    name:
+      - python
+      - python-pip
+    when: ansible_distribution == "Manjaro"
