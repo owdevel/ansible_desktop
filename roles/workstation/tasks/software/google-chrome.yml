@@ -4,4 +4,4 @@
     - chrome
   package:
     name:
-      - "{{ google-chrome_package }}"
+      - "{{ google_chrome_package }}"
