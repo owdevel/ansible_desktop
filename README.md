@@ -4,6 +4,9 @@ Personal Ansible-Pull Desktop Configuration, based heavily on the tutorial by [L
 
 ## Pull Command
 ```bash
+wget -qO- https://raw.githubusercontent.com/owdevel/ansible_desktop/master/local_run.sh | bash
+```
+```bash
 ansible-pull -K -U https://github.com/owdevel/ansible_desktop.git
 ```
 
