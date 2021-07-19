@@ -1,0 +1,5 @@
+- name: install yay
+  package:
+    name:
+      - yay
+    when: ansible_distribution == "Archlinux"
