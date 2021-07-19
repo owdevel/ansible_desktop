@@ -1,7 +1,8 @@
-- name: install google-chrome
+- name: install google-chrome aur
   tags:
     - browser
     - chrome
-  package:
+  aur:
     name:
-      - "{{ google_chrome_package }}"
+      - google-chrome
+  when: ansible_distribution == "Archlinux"
