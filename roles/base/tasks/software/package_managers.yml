@@ -2,4 +2,4 @@
   package:
     name:
       - yay
-    when: ansible_distribution == "Archlinux"
+  when: ansible_distribution == "Archlinux"
