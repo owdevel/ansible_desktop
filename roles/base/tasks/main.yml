@@ -7,6 +7,9 @@
   # Setup Ansible
   - import_tasks: ansible_setup.yml
 
+  - import_tasks: aur_setup.yml
+    when: ansible_distribution == "Archlinux"
+
   - import_tasks: software/package_managers.yml
   - import_tasks: software/terminal.yml
   - import_tasks: software/packages.yml

@@ -5,4 +5,6 @@
   aur:
     name:
       - google-chrome
+  become: yes
+  become_user: aur_builder
   when: ansible_distribution == "Archlinux"
