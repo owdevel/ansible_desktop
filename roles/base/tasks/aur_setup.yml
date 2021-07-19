@@ -20,6 +20,6 @@
       file:
         path: /home/aur_builder/.ansible/tmp
         owner: "aur_builder"
-        group: "aur_builder"
+        group: "wheel"
         state: directory
 
