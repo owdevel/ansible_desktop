@@ -6,7 +6,7 @@
     - name: aur setup | create aur_builder user
       user:
         name: aur_builder
-        create_home: no
+        create_home: yes
         group: wheel
 
     - name: aur setup | aur_builder sudo pacman access
