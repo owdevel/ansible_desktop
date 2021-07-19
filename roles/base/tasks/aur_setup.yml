@@ -16,3 +16,10 @@
         create: yes
         validate: 'visudo -cf %s'
 
+    - name: aur setup | aur_builder temp directory
+      file:
+        path: /home/aur_builder/.ansible/tmp
+        owner: "aur_builder"
+        group: "aur_builder"
+        state: directory
+
