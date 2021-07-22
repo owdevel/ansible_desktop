@@ -1,4 +1,4 @@
-- name: install syncthingtray aur
+- name: install joplin
   tags:
     - joplin
     - notes
