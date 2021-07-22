@@ -1,0 +1,10 @@
+- name: install spotify
+  tags:
+    - spotify
+    - music
+  aur:
+    name:
+      - spotify
+  become: yes
+  become_user: aur_builder
+  when: ansible_distribution == "Archlinux"
