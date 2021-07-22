@@ -23,3 +23,14 @@
         group: "wheel"
         state: directory
 
+    - name: aur setup | aur_builder AccountsService File
+      file:
+        path: /var/lib/AccountsService/users/aur_builder
+        line: '[User]'
+        create: yes
+    
+    - name: aur setup | aur_builder System Account
+      file:
+        path: /var/lib/AccountsService/users/aur_builder
+        line: 'SystemAccount=true'
+
