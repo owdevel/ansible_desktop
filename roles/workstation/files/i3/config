@@ -57,7 +57,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+Ctrl+c exec google-chrome-stable
-bindsym $mod+Ctrl+r exec ranger
+bindsym $mod+Ctrl+r exec terminal -e 'ranger'
 #bindsym $mod+F2 exec palemoon
 #bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
