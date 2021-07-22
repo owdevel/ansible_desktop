@@ -18,8 +18,11 @@
     regexp: 'userapp-Pale Moon'
     replace: 'google-chrome'
 
-- name: google-chrome | set default browser bashrc
-  lineinfile:
-    path: "{{ item }}"
-    line: BROWSER=/usr/bin/google-chrome-stable
-  with_items: ["/home/{{user_name}}/.bashrc", "/home/{{user_name}}/.zshrc" ]
+- name: google-chrome | set default browser profile
+  tags:
+    - browser
+    - chrome
+  replace:
+    path: /home/{{user_name}}/.profile
+    regexp: '/usr/bin/palemoon'
+    replace: '/usr/bin/google-chrome-stable/'
