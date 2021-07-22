@@ -1,4 +1,4 @@
-- name: install google-chrome aur
+- name: google-chrome | aur install
   tags:
     - browser
     - chrome
@@ -8,3 +8,12 @@
   become: yes
   become_user: aur_builder
   when: ansible_distribution == "Archlinux"
+
+- name: google-chrome | set default browser
+  tags:
+    - browser
+    - chrome
+  replace:
+    path: /home/{{user_name}}/.config/mimeapps.list
+    regexp: 'userapp-Pale Moon'
+    replace: 'google-chrome'
