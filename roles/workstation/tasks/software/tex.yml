@@ -1,0 +1,6 @@
+- name: install texlive
+  tags:
+    - tex
+  package:
+    name:
+      - texlive-most
