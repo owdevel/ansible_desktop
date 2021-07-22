@@ -1,0 +1,10 @@
+- name: install syncthingtray aur
+  tags:
+    - joplin
+    - notes
+  aur:
+    name:
+      - joplin-desktop
+  become: yes
+  become_user: aur_builder
+  when: ansible_distribution == "Archlinux"

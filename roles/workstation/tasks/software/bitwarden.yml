@@ -1,0 +1,6 @@
+- name: install bitwarden
+  tags:
+    - bitwarden
+  package:
+    name:
+      - bitwarden

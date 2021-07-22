@@ -9,6 +9,8 @@
 
   - import_tasks: software/google-chrome.yml
   - import_tasks: software/syncthing.yml
+  - import_tasks: software/bitwarden.yml
+  - import_tasks: software/joplin.yml
   - import_tasks: software/code.yml
   - import_tasks: software/tex.yml
   - import_tasks: software/nvm.yml
