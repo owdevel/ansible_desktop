@@ -1,0 +1,6 @@
+- name: install discord
+  tags:
+    - discord
+  package:
+    name:
+      - discord
