@@ -24,13 +24,13 @@
         state: directory
 
     - name: aur setup | aur_builder AccountsService File
-      file:
+      lineinfile:
         path: /var/lib/AccountsService/users/aur_builder
         line: '[User]'
         create: yes
     
     - name: aur setup | aur_builder System Account
-      file:
+      lineinfile:
         path: /var/lib/AccountsService/users/aur_builder
         line: 'SystemAccount=true'
 
