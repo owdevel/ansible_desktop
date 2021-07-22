@@ -20,7 +20,6 @@
 
 - name: google-chrome | set default browser bashrc
   lineinfile:
-    path: [/home/{{user_name}}/.bashrc, /home/{{user_name}}/.zshrc]
+    path: "{{ item }}"
     line: BROWSER=/usr/bin/google-chrome-stable
-
-- name: google-chrome | set default browser 
+  with_items: ["/home/{{user_name}}/.bashrc", "/home/{{user_name}}/.zshrc" ]
