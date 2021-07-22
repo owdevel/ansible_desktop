@@ -25,4 +25,4 @@
   replace:
     path: /home/{{user_name}}/.profile
     regexp: '/usr/bin/palemoon'
-    replace: '/usr/bin/google-chrome-stable/'
+    replace: '/usr/bin/google-chrome-stable'

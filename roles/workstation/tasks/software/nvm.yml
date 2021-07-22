@@ -8,12 +8,10 @@
         name:
           - nvm
     
-    - name: nvm | add to bashrc
+    - name: nvm | add to shell
       lineinfile:
-        path: /home/owen/.bashrc
+        path: "{{ item }}"
         line: source /usr/share/nvm/init-nvm.sh
-    
-    - name: nvm | add to zshrc
-      lineinfile:
-        path: /home/owen/.zshrc
-        line: source /usr/share/nvm/init-nvm.sh
+      loop:
+        - '/home/{{user_name}}/.bashrc'
+        - '/home/{{user_name}}/.zshrc'
