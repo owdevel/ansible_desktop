@@ -8,6 +8,7 @@
     when: i3 is defined and i3 == true
 
   - import_tasks: software/google-chrome.yml
+  - import_tasks: software/syncthing.yml
   - import_tasks: software/code.yml
   - import_tasks: software/tex.yml
   - import_tasks: software/nvm.yml

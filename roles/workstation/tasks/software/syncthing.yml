@@ -1,0 +1,10 @@
+- name: install syncthingtray aur
+  tags:
+    - browser
+    - chrome
+  aur:
+    name:
+      - syncthingtray
+  become: yes
+  become_user: aur_builder
+  when: ansible_distribution == "Archlinux"
