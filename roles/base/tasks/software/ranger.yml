@@ -9,9 +9,9 @@
         name:
           - ranger
 
-    - name: ranger | add ranger cd shortcut to .bashrc and .zshrc
+    - name: ranger | add ranger cd shortcut to .bashrc
       blockinfile:
-        path: "{{ item }}"
+        path: /home/{{ user_name }}/.bashrc
         marker: "# {mark} ANSIBLE MANAGED BLOCK - ranger"
         block: |
           function ranger-cd {
@@ -27,4 +27,22 @@
           then
             bind '"\C-o":"ranger-cd\C-m"'
           fi
-      loop: ["/home/{{ user_name }}/.bashrc", "/home/{{ user_name }}/.zshrc"]
+
+    - name: ranger | add ranger cd shortcut to .zshrc
+      blockinfile:
+        path: /home/{{ user_name }}/.zshrc
+        marker: "# {mark} ANSIBLE MANAGED BLOCK - ranger"
+        block: |
+          function ranger-cd {
+            tempfile="$(mktemp -t tmp.XXXXXX)"
+            ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+            test -f "$tempfile" &&
+            if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+              cd -- "$(cat "$tempfile")"
+            fi
+            rm -f -- "$tempfile"
+          }
+          if [ -t 1 ];
+          then
+            bindkey -s "^o" "ranger-cd\n"
+          fi
