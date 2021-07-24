@@ -4,3 +4,12 @@
   package:
     name:
       - code
+- name: install code-marketplace
+  tags:
+    - code
+  aur:
+    name:
+      - code-marketplace
+  become: yes
+  become_user: aur_builder
+  when: ansible_distribution == "Archlinux"
