@@ -12,6 +12,7 @@
   - import_tasks: software/syncthing.yml
   - import_tasks: software/bitwarden.yml
   - import_tasks: software/joplin.yml
+  - import_tasks: software/libreoffice.yml
   - import_tasks: software/discord.yml
   - import_tasks: software/spotify.yml
   - import_tasks: software/code.yml
