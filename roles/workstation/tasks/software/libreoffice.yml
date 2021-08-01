@@ -1,0 +1,7 @@
+- name: install libreoffice
+  tags:
+    - libreoffice
+    - office
+  package:
+    name:
+      - "{{ libreoffice_package }}"
