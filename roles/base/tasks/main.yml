@@ -14,4 +14,5 @@
   - import_tasks: software/terminal.yml
   - import_tasks: software/packages.yml
   - import_tasks: software/python.yml
+  - import_tasks: software/neovim.yml
   - import_tasks: software/ranger.yml

@@ -6,6 +6,5 @@
       - git
       - htop
       - neofetch
-      - neovim
       - rsync
       - unzip
