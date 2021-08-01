@@ -1,3 +1,5 @@
 terminal_aliases: |
+  alias ls='ls --color=auto'
   alias ll='ls -al'
+  alias grep='grep --colour=auto'
   alias g='git'
