@@ -14,7 +14,7 @@
     - browser
     - chrome
   replace:
-    path: /home/{{user_name}}/.config/mimeapps.list
+    path: /home/{{ user_name }}/.config/mimeapps.list
     regexp: 'userapp-Pale Moon'
     replace: 'google-chrome'
 
@@ -23,6 +23,6 @@
     - browser
     - chrome
   replace:
-    path: /home/{{user_name}}/.profile
+    path: /home/{{ user_name }}/.profile
     regexp: '/usr/bin/palemoon'
     replace: '/usr/bin/google-chrome-stable'

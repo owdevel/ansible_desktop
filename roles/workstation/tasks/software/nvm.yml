@@ -13,5 +13,5 @@
         path: "{{ item }}"
         line: source /usr/share/nvm/init-nvm.sh
       loop:
-        - '/home/{{user_name}}/.bashrc'
-        - '/home/{{user_name}}/.zshrc'
+        - '/home/{{ user_name }}/.bashrc'
+        - '/home/{{ user_name }}/.zshrc'

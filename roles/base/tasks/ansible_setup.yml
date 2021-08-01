@@ -6,7 +6,6 @@
     - name: ansible setup | ensure ansible is latest
       package:
         name: ansible
-        state: latest
     
     - name: ansible setup | create log file
       file:

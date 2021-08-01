@@ -11,21 +11,20 @@
           - "{{ python_virtualenv_package }}"
 
     - name: python3 | install pip packages
-      become_user: owen
+      become_user: "{{ user_name }}"
       pip:
         executable: /usr/bin/pip3
-        state: latest
         name:
           - pipx
 
     - name: python3 | pipx bashrc
       lineinfile:
-        path: /home/owen/.bashrc
+        path: /home/{{ user_name }}/.bashrc
         line: eval "$(register-python-argcomplete pipx)"
 
     - name: python3 | pipx zsh
       blockinfile:
-        path: /home/owen/.zshrc
+        path: /home/{{ user_name }}/.zshrc
         marker: "# {mark} ANSIBLE MANAGED BLOCK - pipx"
         block: |
           autoload -U bashcompinit

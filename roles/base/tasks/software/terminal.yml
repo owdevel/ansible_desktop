@@ -22,15 +22,16 @@
         marker: "# {mark} ANSIBLE MANAGED BLOCK - terminal"
         block: "{{ terminal_aliases }}"
 
-    - name: termianl | copy zsh powerline fonts
+    - name: terminal | copy zsh powerline fonts
       copy:
         src: "fonts/ttf/MesloLGS NF"
         dest: "/home/{{ user_name }}/.local/share/fonts/ttf"
         owner: "{{ user_name }}"
         group: "{{ user_name }}"
+        mode: "u=rw,go=r"
         backup: yes
 
     - name: terminal | set zsh as default user shell
       user:
-        name: "{{user_name}}"
+        name: "{{ user_name }}"
         shell: /usr/bin/zsh

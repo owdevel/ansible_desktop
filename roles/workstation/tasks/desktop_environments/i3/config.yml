@@ -4,15 +4,17 @@
   block:
     - name: i3 | create config directory
       file:
-        path: /home/{{ user_name}}/.i3
-        owner: "{{user_name}}"
-        group: "{{user_name}}"
+        path: /home/{{ user_name }}/.i3
+        owner: "{{ user_name }}"
+        group: "{{ user_name }}"
+        mode: "u=rwx,go=rx"
         state: directory
 
     - name: i3 | copy config
       copy:
         src: i3/config
         dest: /home/{{ user_name }}/.i3/config
-        owner: "{{user_name}}"
-        group: "{{user_name}}"
+        owner: "{{ user_name }}"
+        group: "{{ user_name }}"
+        mode: "u=rw,go=r"
         backup: yes
