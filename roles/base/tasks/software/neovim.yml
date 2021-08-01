@@ -13,6 +13,6 @@
       lineinfile:
         path: "{{ item }}"
         line: $EDITOR=nvim
-        loop:
-          - /home/{{ user_name }}/.bashrc
-          - /home/{{ user_name }}/.zshrc
+      loop:
+        - /home/{{ user_name }}/.bashrc
+        - /home/{{ user_name }}/.zshrc
