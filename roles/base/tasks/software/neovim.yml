@@ -10,9 +10,12 @@
           - neovim
 
     - name: neovim | set default editor to neovim
-      lineinfile:
+      blockinfile:
         path: "{{ item }}"
-        line: $EDITOR=nvim
+        marker: "# {mark} ANSIBLE MANAGED BLOCK - neovim"
+        block: |
+          export VISUAL=nvim
+          export EDITOR="$VISUAL"
       loop:
         - /home/{{ user_name }}/.bashrc
         - /home/{{ user_name }}/.zshrc
