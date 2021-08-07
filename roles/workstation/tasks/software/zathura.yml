@@ -1,0 +1,6 @@
+- name: install zathura
+  tags:
+    - zathura
+  package:
+    name:
+      - zathura
