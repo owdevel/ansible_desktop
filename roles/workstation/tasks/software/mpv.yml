@@ -1,0 +1,6 @@
+- name: install mpv
+  tags:
+    - mpv
+  package:
+    name:
+      - mpv
