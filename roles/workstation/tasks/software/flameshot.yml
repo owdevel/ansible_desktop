@@ -1,7 +1,18 @@
-- name: install flameshot
+- name: flameshot
   tags:
     - screenshot
     - flameshot
-  package:
-    name:
-      - flameshot
+  block:
+    - name: flameshot | install
+      package:
+        name:
+          - flameshot
+    
+    - name: flameshot | copy config
+      copy:
+        src: flameshot/flameshot.ini
+        dest: /home/{{ user_name }}/.config/flameshot/flameshot.ini
+        owner: "{{ user_name }}"
+        group: "{{ user_name }}"
+        mode: "u=rw,go=r"
+        backup: yes
