@@ -297,6 +297,9 @@ exec_always --no-startup-id fix_xcursor
 
 exec --no-startup-id syncthingtray
 
+# Set caps to escape
+exec setxkbmap -option caps:ctrl_modifier
+
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
