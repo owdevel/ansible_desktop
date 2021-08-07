@@ -1,0 +1,6 @@
+- name: install caprine
+  tags:
+    - caprine
+  package:
+    name:
+      - caprine
