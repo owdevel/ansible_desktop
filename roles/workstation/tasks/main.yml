@@ -15,6 +15,7 @@
   - import_tasks: software/libreoffice.yml
   - import_tasks: software/zathura.yml
   - import_tasks: software/mpv.yml
+  - import_tasks: software/flameshot.yml
   - import_tasks: software/discord.yml
   - import_tasks: software/caprine.yml
   - import_tasks: software/spotify.yml

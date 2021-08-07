@@ -1,0 +1,7 @@
+- name: install flameshot
+  tags:
+    - screenshot
+    - flameshot
+  package:
+    name:
+      - flameshot
