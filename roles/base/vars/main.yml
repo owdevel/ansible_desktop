@@ -4,3 +4,5 @@ terminal_aliases: |
   alias grep='grep --colour=auto'
   alias g='git'
   alias vim='nvim'
+  alias yay='yay --color=auto'
+  alias pacman='pacman --color=auto'
