@@ -1,0 +1,9 @@
+- name: install fonts
+  tags:
+    - font
+    - cjk
+    - emoji
+  package:
+    name:
+      - noto-fonts-cjk
+      - noto-fonts-emoji
