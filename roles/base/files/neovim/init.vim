@@ -2,12 +2,9 @@
 set number
 set relativenumber
 
-set expandtab!
-set tabstop=2
-set shiftwidth=2
-
-set list
-set lcs=tab:\|\ 
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 " Vim Plug
 " Specify a directory for plugins
@@ -15,6 +12,7 @@ set lcs=tab:\|\
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin(stdpath('data') . '/plugged')
 
+Plug 'vim-airline/vim-airline'
 
 " Initialize plugin system
 call plug#end()
