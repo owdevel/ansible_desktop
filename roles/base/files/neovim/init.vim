@@ -29,6 +29,12 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Initialize plugin system
 call plug#end()
 
-source ./general.vim
-source ./nerdtree.vim
-source ./coc.vim
+let g:config_file_list = ['general.vim',
+  \ 'nerdtree.vim',
+  \ 'coc.vim',
+  \ ]
+
+let g:nvim_config_root = expand('<sfile>:p:h')
+for s:fname in g:config_file_list
+  execute printf('source %s/%s', g:nvim_config_root, s:fname)
+endfor
