@@ -14,6 +14,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Version Control
 Plug 'tpope/vim-fugitive'
