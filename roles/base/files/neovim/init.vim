@@ -1,11 +1,3 @@
-" Nvim Settings
-set number
-set relativenumber
-
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-
 " Vim Plug
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
@@ -37,10 +29,6 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Initialize plugin system
 call plug#end()
 
-" Nerd Tree
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-
-nnoremap <C-h> :CocCommand clangd.switchSourceHeader<CR>
+source ./general.vim
+source ./nerdtree.vim
+source ./coc.vim

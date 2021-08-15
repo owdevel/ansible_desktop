@@ -47,8 +47,8 @@
 
     - name: neovim | copy config
       copy:
-        src: neovim/init.vim
-        dest: /home/{{ user_name }}/.config/nvim/init.vim
+        src: neovim/
+        dest: /home/{{ user_name }}/.config/nvim/
         owner: "{{ user_name }}"
         group: "{{ user_name }}"
         mode: "u=rw,go=r"
