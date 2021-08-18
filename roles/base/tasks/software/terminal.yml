@@ -36,7 +36,10 @@
         name: "{{ user_name }}"
         shell: /usr/bin/zsh
 
-    - name: terminal | set zsh histignorespace
-      lineinfile:
+    - name: terminal | set zsh custom settings
+      blockinfile:
         path: "/home/{{ user_name }}/.zshrc"
-        line: setopt histignorespace
+        marker: "# {mark} ANSIBLE MANAGED BLOCK - zsh"
+        block: |
+          setopt histignorespace
+          bindkey -v
