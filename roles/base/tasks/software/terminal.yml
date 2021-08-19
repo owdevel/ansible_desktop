@@ -42,4 +42,3 @@
         marker: "# {mark} ANSIBLE MANAGED BLOCK - zsh"
         block: |
           setopt histignorespace
-          bindkey -v
