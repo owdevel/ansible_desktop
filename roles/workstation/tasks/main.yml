@@ -4,7 +4,9 @@
 
 - block:
 
-  - include_tasks: desktop_environments/i3/config.yml
+- include_tasks:
+      - desktop_environments/i3/config.yml
+      - desktop_environments/i3/pulseaudio.yml
     when: i3 is defined and i3 == true
 
   - import_tasks: software/fonts.yml

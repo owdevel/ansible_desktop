@@ -1,0 +1,18 @@
+- name: i3
+  tags:
+    - i3
+  block:
+    - name: i3 - pulseaudio | install
+      package:
+        name:
+          - manjaro-pulse
+          - pa-applet
+          - pavucontrol
+
+    - name: i3 - pulseaudio | systemd enable
+      become: true
+      become_user: "{{ user_name }}"
+      systemd:
+        scope: user
+        name: pulseaudio
+        enabled: yes
