@@ -1,7 +1,6 @@
 - name: install system utils
   package:
     name:
-      - base-devel
       - curl
       - git
       - htop
