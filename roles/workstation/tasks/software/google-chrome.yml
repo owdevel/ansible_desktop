@@ -27,6 +27,7 @@
     path: /home/{{ user_name }}/.config/mimeapps.list
     regexp: 'userapp-Pale Moon'
     replace: 'google-chrome'
+  when: ansible_distribution == "Archlinux"
 
 - name: google-chrome | set default browser profile
   tags:
@@ -36,3 +37,4 @@
     path: /home/{{ user_name }}/.profile
     regexp: '/usr/bin/palemoon'
     replace: '/usr/bin/google-chrome-stable'
+  when: ansible_distribution == "Archlinux"
