@@ -10,6 +10,18 @@
           - tmux
           - zsh
 
+
+    - name: terminal | check for ohmyzsh
+      stat:
+        path: /home/{{ user_name }}/.oh-my-zsh
+      register: ohmyzsh_config
+
+    - name: terminal | install ohmyzsh
+      become: true
+      become_user: "{{ user_name }}"
+      shell: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      when:  ohmyzsh_config.exists == False && ansible_distribution != "Archlinux"
+
     - name: terminal | add aliases to bashrc
       blockinfile:
         path: /home/owen/.bashrc
