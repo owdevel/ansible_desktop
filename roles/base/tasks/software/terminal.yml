@@ -20,7 +20,7 @@
       become: true
       become_user: "{{ user_name }}"
       shell: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-      when:  ohmyzsh_config.exists == False and ansible_distribution != "Archlinux"
+      when:  ohmyzsh_config.stat.exists == False and ansible_distribution != "Archlinux"
 
     - name: terminal | add aliases to bashrc
       blockinfile:
