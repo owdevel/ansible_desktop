@@ -3,4 +3,4 @@
     - tex
   package:
     name:
-      - texlive-most
+      - "{{ texlive_package }}"

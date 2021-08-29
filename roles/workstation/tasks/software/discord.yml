@@ -4,3 +4,4 @@
   package:
     name:
       - discord
+  when: ansible_distribution == "Archlinux"

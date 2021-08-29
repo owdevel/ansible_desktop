@@ -2,6 +2,7 @@
   tags:
     - node
     - nvm
+  when: ansible_distribution == "Archlinux"
   block:
     - name: nvm | install node version manager
       package:

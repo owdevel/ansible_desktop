@@ -4,6 +4,8 @@
   package:
     name:
       - code
+  when: ansible_distribution == "Archlinux"
+
 - name: install code-marketplace
   tags:
     - code

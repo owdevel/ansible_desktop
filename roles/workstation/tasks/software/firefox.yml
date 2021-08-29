@@ -5,3 +5,4 @@
   package:
     name:
       - firefox-developer-edition
+  when: ansible_distribution == "Archlinux"

@@ -1,0 +1,6 @@
+- name: install fedora workstation repos
+  tags:
+    - fedora
+  package:
+    name:
+      - fedora-workstation-repositories

@@ -4,3 +4,4 @@
   package:
     name:
       - bitwarden
+  when: ansible_distribution == 'Archlinux'

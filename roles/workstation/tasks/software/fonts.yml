@@ -7,3 +7,4 @@
     name:
       - noto-fonts-cjk
       - noto-fonts-emoji
+  when: ansible_distribution == "Archlinux"

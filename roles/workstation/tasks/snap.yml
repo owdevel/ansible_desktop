@@ -1,0 +1,6 @@
+- name: install snap
+  tags:
+    - snap
+  package:
+    name:
+      - snapd

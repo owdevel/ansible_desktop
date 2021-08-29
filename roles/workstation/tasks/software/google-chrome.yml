@@ -9,6 +9,16 @@
   become_user: aur_builder
   when: ansible_distribution == "Archlinux"
 
+- name: google-chrome | enable dnf repo
+  shell: dnf config-manager --set-enabled google-chrome
+  when: ansible_distribution == "Fedora"
+
+- name: google-chrome | dnf install
+  package:
+    name:
+      - google-chrome-stable
+  when: ansible_distribution == "Fedora"
+
 - name: google-chrome | set default browser mimeapps
   tags:
     - browser

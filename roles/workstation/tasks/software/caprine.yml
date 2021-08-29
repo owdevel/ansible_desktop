@@ -4,3 +4,4 @@
   package:
     name:
       - caprine
+  when: ansible_distribution == "Archlinux"
