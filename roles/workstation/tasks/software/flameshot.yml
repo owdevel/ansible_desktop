@@ -7,6 +7,13 @@
       package:
         name:
           - flameshot
+    - name: flameshot | create config directory
+      file:
+        path: /home/{{ user_name }}/.config/flameshot
+        owner: "{{ user_name }}"
+        group: "{{ user_name }}"
+        mode: "u=rwx,go=rx"
+        state: directory
     
     - name: flameshot | copy config
       copy:
