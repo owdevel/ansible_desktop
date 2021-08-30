@@ -1,9 +1,10 @@
 #/bin/sh
 AUR_PLUGIN_DIR=~/.ansible/plugins/modules/aur/
-RUN_SCRIPT=https://raw.githubusercontent.com/owdevel/ansible_desktop/master/local_run.sh
+RUN_SCRIPT_URL=https://raw.githubusercontent.com/owdevel/ansible_desktop/master/local_run.sh
+RUN_SCRIPT=$HOME/ansible_desktop.sh
 
 if [ ! -f "$RUN_SCRIPT" ]; then
-	wget https://raw.githubusercontent.com/owdevel/ansible_desktop/master/local_run.sh --output-document $HOME/ansible_desktop.sh
+	wget https://raw.githubusercontent.com/owdevel/ansible_desktop/master/local_run.sh --output-document $RUN_SCRIPT
 fi
 
 
