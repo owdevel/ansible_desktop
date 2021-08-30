@@ -9,7 +9,7 @@
 
     - name: code | copy yum repo
       ansible.builtin.copy:
-        src: /code/yum_vscode.repo
+        src: code/yum_vscode.repo
         dest: /etc/yum.repos.d/vscode.repo
         owner: root
         group: root
