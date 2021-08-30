@@ -1,7 +1,14 @@
-- name: install bitwarden
-  tags:
-    - bitwarden
-  package:
-    name:
-      - bitwarden
-  when: ansible_distribution == 'Archlinux'
+- name: bitwarden
+  tags: bitwarden
+  block:
+    - name: bitwarden | package
+      ansible.builtin.package:
+        name:
+          - bitwarden
+      when: ansible_distribution == 'Archlinux'
+    
+    - name: bitwarden | snap
+      community.general.snap:
+        name:
+          - bitwarden
+      when: snap == True
