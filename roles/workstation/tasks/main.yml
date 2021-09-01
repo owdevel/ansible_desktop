@@ -7,6 +7,8 @@
   - include_tasks: dnf.yml
     when: ansible_distribution == "Fedora"
 
+  - include_tasks: desktop_environments/gnome/appindicator.yml
+    when: gnome is defined and gnome == true
   - include_tasks: desktop_environments/i3/config.yml
     when: i3 is defined and i3 == true
 

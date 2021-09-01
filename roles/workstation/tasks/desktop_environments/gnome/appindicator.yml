@@ -1,0 +1,5 @@
+- name: gnome | appindicator
+  package:
+    name:
+      - gnome-shell-extension-appindicator
+
