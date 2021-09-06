@@ -19,7 +19,7 @@
     when: snap is defined and snap == true
 
   - import_tasks: software/fonts.yml
-  - import_tasks: software/google-chrome.yml
+  #- import_tasks: software/google-chrome.yml
   - import_tasks: software/firefox.yml
   - import_tasks: software/syncthing.yml
   - import_tasks: software/bitwarden.yml
