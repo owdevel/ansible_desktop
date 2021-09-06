@@ -1,5 +1,4 @@
 #/bin/sh
-AUR_PLUGIN_DIR=~/.ansible/plugins/modules/aur/
 RUN_SCRIPT_URL=https://raw.githubusercontent.com/owdevel/ansible_desktop/master/local_run.sh
 RUN_SCRIPT=$HOME/ansible_desktop.sh
 
@@ -15,5 +14,6 @@ else
 fi
 
 ansible-galaxy collection install community.general
+ansible-galaxy collection install kewlfft.aur
 
 ansible-pull -K -v -U https://github.com/owdevel/ansible_desktop.git
