@@ -4,9 +4,7 @@ xmap <leader><s-tab> <plug>(fzf-maps-x)
 omap <leader><s-tab> <plug>(fzf-maps-o)
 
 " File Mappings
-nmap <space><f> <plug>(fzf-complete-file)
-xmap <space><f> <plug>(fzf-complete-file)
-omap <space><f> <plug>(fzf-complete-file)
+nnoremap <space>f :Files<CR>
 
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)
