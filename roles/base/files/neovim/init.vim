@@ -32,7 +32,7 @@ call plug#end()
 let g:config_file_list = ['general.vim',
   \ 'nerdtree.vim',
   \ 'coc.vim',
-  | 'fzf.vim',
+  \ 'fzf.vim',
   \ ]
 
 let g:nvim_config_root = expand('<sfile>:p:h')
