@@ -1,7 +1,7 @@
 - name: install discord
   tags:
     - discord
-  package:
+  ansible.builtin.package:
     name:
       - discord
   when: ansible_distribution == "Archlinux"

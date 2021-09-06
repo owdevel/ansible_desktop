@@ -2,6 +2,6 @@
   tags:
     - libreoffice
     - office
-  package:
+  ansible.builtin.package:
     name:
       - "{{ libreoffice_package }}"

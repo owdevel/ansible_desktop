@@ -1,7 +1,7 @@
 - name: install caprine
   tags:
     - caprine
-  package:
+  ansible.builtin.package:
     name:
       - caprine
   when: ansible_distribution == "Archlinux"

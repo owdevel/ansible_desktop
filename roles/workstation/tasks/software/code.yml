@@ -18,14 +18,14 @@
 - name: code | install
   tags:
     - code
-  package:
+  ansible.builtin.package:
     name:
       - code
 
 - name: code | marketplace
   tags:
     - code
-  aur:
+  kewlfft.aur.aur:
     name:
       - code-marketplace
   become: yes

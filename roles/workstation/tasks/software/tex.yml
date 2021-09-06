@@ -1,6 +1,6 @@
 - name: install texlive
   tags:
     - tex
-  package:
+  ansible.builtin.package:
     name:
       - "{{ texlive_package }}"

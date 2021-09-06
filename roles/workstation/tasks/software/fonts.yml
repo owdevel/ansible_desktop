@@ -3,7 +3,7 @@
     - font
     - cjk
     - emoji
-  package:
+  ansible.builtin.package:
     name:
       - noto-fonts-cjk
       - noto-fonts-emoji

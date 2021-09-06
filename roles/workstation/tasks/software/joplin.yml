@@ -2,7 +2,7 @@
   tags:
     - joplin
     - notes
-  aur:
+  kewlfft.aur.aur:
     name:
       - joplin-desktop
   become: yes

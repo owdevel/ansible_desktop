@@ -1,7 +1,7 @@
 - name: install mpv
   tags:
     - mpv
-  package:
+  ansible.builtin.package:
     name:
       - mpv
   when: ansible_distribution == "Archlinux"

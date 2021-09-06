@@ -1,6 +1,6 @@
 - name: install snap
   tags:
     - snap
-  package:
+  ansible.builtin.package:
     name:
       - snapd

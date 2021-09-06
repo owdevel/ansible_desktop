@@ -4,11 +4,11 @@
     - flameshot
   block:
     - name: flameshot | install
-      package:
+      ansible.builtin.package:
         name:
           - flameshot
     - name: flameshot | create config directory
-      file:
+      ansible.builtin.file:
         path: /home/{{ user_name }}/.config/flameshot
         owner: "{{ user_name }}"
         group: "{{ user_name }}"
@@ -16,7 +16,7 @@
         state: directory
     
     - name: flameshot | copy config
-      copy:
+      ansible.builtin.copy:
         src: flameshot/flameshot.ini
         dest: /home/{{ user_name }}/.config/flameshot/flameshot.ini
         owner: "{{ user_name }}"

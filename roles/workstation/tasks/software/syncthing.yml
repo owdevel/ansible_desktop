@@ -1,9 +1,9 @@
 - name: syncthing | dnf repo
-  shell: dnf config-manager --add-repo https://download.opensuse.org/repositories/home:mkittler/Fedora_34/home:mkittler.repo
+  ansible.builtin.shell: dnf config-manager --add-repo https://download.opensuse.org/repositories/home:mkittler/Fedora_34/home:mkittler.repo
   when: ansible_distribution == "Fedora"
 
 - name: syncthing | dnf install
-  package:
+  ansible.builtin.package:
     name:
       - syncthingtray
   when: ansible_distribution == "Fedora"
@@ -12,7 +12,7 @@
   tags:
     - browser
     - chrome
-  aur:
+  kewlfft.aur.aur:
     name:
       - syncthingtray
   become: yes

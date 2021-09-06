@@ -2,7 +2,7 @@
   tags:
     - spotify
     - music
-  aur:
+  kewlfft.aur.aur:
     name:
       - spotify
   become: yes

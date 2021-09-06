@@ -1,7 +1,7 @@
 - name: install zathura
   tags:
     - zathura
-  package:
+  ansible.builtin.package:
     name:
       - zathura
       - zathura-pdf-poppler

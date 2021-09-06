@@ -5,12 +5,12 @@
   when: ansible_distribution == "Archlinux"
   block:
     - name: nvm | install node version manager
-      package:
+      ansible.builtin.package:
         name:
           - nvm
     
     - name: nvm | add to shell
-      lineinfile:
+      ansible.builtin.lineinfile:
         path: "{{ item }}"
         line: source /usr/share/nvm/init-nvm.sh
       loop:

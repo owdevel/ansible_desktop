@@ -1,6 +1,6 @@
 - name: install fedora workstation repos
   tags:
     - fedora
-  package:
+  ansible.builtin.package:
     name:
       - fedora-workstation-repositories

@@ -2,7 +2,7 @@
   tags:
     - firefox
     - browser
-  package:
+  ansible.builtin.package:
     name:
       - firefox-developer-edition
   when: ansible_distribution == "Archlinux"
