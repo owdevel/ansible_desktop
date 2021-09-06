@@ -1,7 +1,12 @@
 " Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
+nmap <leader><s-tab> <plug>(fzf-maps-n)
+xmap <leader><s-tab> <plug>(fzf-maps-x)
+omap <leader><s-tab> <plug>(fzf-maps-o)
+
+# File Mappings
+nmap <space><f> <plug>(fzf-complete-file)
+xmap <space><f> <plug>(fzf-complete-file)
+omap <space><f> <plug>(fzf-complete-file)
 
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)
