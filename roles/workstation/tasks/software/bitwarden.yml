@@ -11,4 +11,4 @@
       community.general.snap:
         name:
           - bitwarden
-      when: snap == True
+      when: snap is defined and snap == True
