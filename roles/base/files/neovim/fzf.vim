@@ -3,7 +3,7 @@ nmap <leader><s-tab> <plug>(fzf-maps-n)
 xmap <leader><s-tab> <plug>(fzf-maps-x)
 omap <leader><s-tab> <plug>(fzf-maps-o)
 
-# File Mappings
+" File Mappings
 nmap <space><f> <plug>(fzf-complete-file)
 xmap <space><f> <plug>(fzf-complete-file)
 omap <space><f> <plug>(fzf-complete-file)
