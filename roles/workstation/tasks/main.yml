@@ -9,6 +9,7 @@
 
   - include_tasks: desktop_environments/gnome/appindicator.yml
     when: gnome is defined and gnome == true
+
   - include_tasks: desktop_environments/i3/config.yml
     when: i3 is defined and i3 == true
 
@@ -19,7 +20,7 @@
     when: snap is defined and snap == true
 
   - import_tasks: software/fonts.yml
-  #- import_tasks: software/google-chrome.yml
+  - import_tasks: software/google-chrome.yml
   - import_tasks: software/firefox.yml
   - import_tasks: software/syncthing.yml
   - import_tasks: software/bitwarden.yml
