@@ -2,7 +2,7 @@
   tags:
     - browser
     - chrome
-  aur:
+  kewlfft.aur.aur:
     name:
       - google-chrome
   become: yes
