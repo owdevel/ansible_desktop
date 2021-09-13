@@ -1,0 +1,3 @@
+python_package: python3
+python_pip_package: python3-pip
+python_virtualenv_package: python3-virtualenv
