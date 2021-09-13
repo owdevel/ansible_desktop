@@ -4,6 +4,11 @@
     - neovim
     - editor
   block:
+    - name: neovim | add apt repository
+      ansible.builtin.apt_repository:
+        repo: 'ppa:neovim-ppa/stable'
+      when: ansible_distribution == 'Ubuntu'
+
     - name: neovim | install neovim
       package:
         name:
