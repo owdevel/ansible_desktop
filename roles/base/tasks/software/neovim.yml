@@ -6,7 +6,7 @@
   block:
     - name: neovim | add apt repository
       ansible.builtin.apt_repository:
-        repo: 'ppa:neovim-ppa/stable'
+        repo: 'ppa:neovim-ppa/unstable'
       when: ansible_distribution == 'Ubuntu'
 
     - name: neovim | install neovim
