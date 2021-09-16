@@ -5,7 +5,7 @@ omap <leader><s-tab> <plug>(fzf-maps-o)
 
 " File Mappings
 nnoremap <c-p> :Files<CR>
-nnoremap <c-s-p> :Commands<CR>
+nnoremap <c-P> :Commands<CR>
 
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)
