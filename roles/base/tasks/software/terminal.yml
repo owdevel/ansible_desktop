@@ -39,24 +39,32 @@
             repo: "https://github.com/zsh-users/zsh-autosuggestions"
             dest: /home/{{ user_name }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
-        - name: terminal | clone powerlevel10k
-          ansible.builtin.git:
-            repo: "https://github.com/romkatv/powerlevel10k.git"
-            dest: /home/{{ user_name }}/.oh-my-zsh/custom/themes/powerlevel10k
-
         - name: terminal | ohmyzsh plugins
           ansible.builtin.lineinfile:
             path: /home/{{ user_name }}/.zshrc
             regexp: '^plugins='
             line: plugins=(git zsh-syntax-highlighting zsh-history-substring-search zsh-autosuggestions)
 
-        - name: terminal | ohmyzsh theme
-          ansible.builtin.lineinfile:
-            path: /home/{{ user_name }}/.zshrc
-            regexp: '^ZSH_THEME='
-            line: ZSH_THEME="powerlevel10k/powerlevel10k"
+        - name: terminal | ohmyzsh powerlevel10k
+          block:
+            - name: terminal | clone powerlevel10k
+              ansible.builtin.git:
+                repo: "https://github.com/romkatv/powerlevel10k.git"
+                dest: /home/{{ user_name }}/.oh-my-zsh/custom/themes/powerlevel10k
 
+            - name: terminal | ohmyzsh theme
+              ansible.builtin.lineinfile:
+                path: /home/{{ user_name }}/.zshrc
+                regexp: '^ZSH_THEME='
+                line: ZSH_THEME="powerlevel10k/powerlevel10k"
 
+            - name: terminal | powerlevel10k config
+              ansible.builtin.copy:
+                src: "zsh/p10k.zsh" 
+                dest: "/home/{{ user_name }}/.p10k.zsh"
+                owner: "{{ user_name }}"
+                group: "{{ user_name }}"
+                mode: "u=rw,go=r"
 
     - name: terminal | add aliases to bashrc
       blockinfile:
