@@ -61,7 +61,7 @@
           setopt numericglobsort
           setopt nobeep
           setopt appendhistory
-          setopt histignorelldups
+          setopt histignorealldups
           setopt autocd
           setopt inc_append_history
 
