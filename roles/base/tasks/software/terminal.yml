@@ -10,17 +10,37 @@
           - tmux
           - zsh
 
-
-    - name: terminal | check for ohmyzsh
-      stat:
-        path: /home/{{ user_name }}/.oh-my-zsh
-      register: ohmyzsh_config
-
-    - name: terminal | install ohmyzsh
+    - name: terminal | ohmyzsh
       become: true
       become_user: "{{ user_name }}"
-      shell: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-      when:  ohmyzsh_config.stat.exists == False and ansible_distribution != "Archlinux"
+      when: ansible_distribution != "Archlinux"
+      block:
+        - name: terminal | check for ohmyzsh
+          stat:
+            path: /home/{{ user_name }}/.oh-my-zsh
+          register: ohmyzsh_config
+
+        - name: terminal | install ohmyzsh
+          shell: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+          when:  ohmyzsh_config.stat.exists == False
+
+        - name: terminal | clone zsh-syntax-highlighting
+          ansible.builtin.git:
+            repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+            dest: /home/{{ user_name }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+        - name: terminal | clone zsh-syntax-highlighting
+          ansible.builtin.git:
+            repo: "https://github.com/zsh-users/zsh-history-substring-search"
+            dest: /home/{{ user_name }}/.oh-my-zsh/custom/plugins/zsh-history-substring-search
+
+        - name: terminal | ohmyzsh plugins
+          ansible.builtin.lineinfile:
+            path: /home/{{ user_name}}/.zshrc
+            regexp: '^plugins='
+            line: plugins=(git zsh-syntax-highlighting zsh-history-substring-search)
+
+
 
     - name: terminal | add aliases to bashrc
       blockinfile:
