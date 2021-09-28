@@ -54,3 +54,25 @@
         marker: "# {mark} ANSIBLE MANAGED BLOCK - zsh"
         block: |
           setopt histignorespace
+          setopt correct
+          setopt extendedglob
+          setopt nocaseglob
+          setopt rcexpandparam
+          setopt numericglobsort
+          setopt nobeep
+          setopt appendhistory
+          setopt histignorelldups
+          setopt autocd
+          setopt inc_append_history
+
+          zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+          zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+          zstyle ':completion:*' rehash true
+
+          zstyle ':completion:*' accept-exact '*(N)'
+          zstyle ':completion:*' use-cache on
+          zstyle ':completion:*' cache-path ~/.zsh/cache
+
+          HISTFILE=~/.zhistory
+          HISTSIZE=10000
+          SAVEHIST=10000
