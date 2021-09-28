@@ -34,11 +34,27 @@
             repo: "https://github.com/zsh-users/zsh-history-substring-search"
             dest: /home/{{ user_name }}/.oh-my-zsh/custom/plugins/zsh-history-substring-search
 
+        - name: terminal | clone zsh-autosuggestions
+          ansible.builtin.git:
+            repo: "https://github.com/zsh-users/zsh-autosuggestions"
+            dest: /home/{{ user_name }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+        - name: terminal | clone powerlevel10k
+          ansible.builtin.git:
+            repo: "https://github.com/romkatv/powerlevel10k.git"
+            dest: /home/{{ user_name }}/.oh-my-zsh/custom/themes/powerlevel10k
+
         - name: terminal | ohmyzsh plugins
           ansible.builtin.lineinfile:
-            path: /home/{{ user_name}}/.zshrc
+            path: /home/{{ user_name }}/.zshrc
             regexp: '^plugins='
-            line: plugins=(git zsh-syntax-highlighting zsh-history-substring-search)
+            line: plugins=(git zsh-syntax-highlighting zsh-history-substring-search zsh-autosuggestions)
+
+        - name: terminal | ohmyzsh theme
+          ansible.builtin.lineinfile:
+            path: /home/{{ user_name }}/.zshrc
+            regexp: '^ZSH_THEME='
+            line: ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 
