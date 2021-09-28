@@ -66,6 +66,11 @@
                 group: "{{ user_name }}"
                 mode: "u=rw,go=r"
 
+            - name: terminal | disable powerlevel10k config
+              ansible.builtin.lineinfile:
+                path: /home/{{ user_name }}/.zshrc
+                line: POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+
     - name: terminal | add aliases to bashrc
       blockinfile:
         path: /home/owen/.bashrc
