@@ -1,5 +1,6 @@
 [base]
 owen-ubuntu-vb
+qemu-ubuntu18
 
 [workstation]
 owen-coffeelake
